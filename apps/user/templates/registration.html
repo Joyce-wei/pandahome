@@ -1,0 +1,47 @@
+{% extends "base_user.html" %}
+{% load staticfiles %}
+{% block body %}
+
+
+  <div id="pageContent"> 
+    
+    <!-- Content section -->
+    
+    <section class="content content--fill top-null">
+      <div class="container">
+        <h2 class="h-pad-sm text-uppercase text-center">创建账号</h2>
+        <div class="divider divider--sm"></div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="card card--form">
+              <div class="divider divider--xs"></div>
+              <form action="{% url 'index' %}" class="contact-form" id = "registration">
+                <h6 class="text-uppercase text-left">注册信息</h6>
+
+                <input type="text" id = "username" class="input--wd input--wd--full" placeholder="手机号码 *">
+                <input type="text" id = "code" class="input--wd input--wd--full" placeholder="验证码 *">
+                <input type="text" id = "password" class="input--wd input--wd--full" placeholder="请输入密码 *">
+{#                <div class="checkbox-group">#}
+{#                  <input type="checkbox" id="checkBox2">#}
+{#                  <label for="checkBox2"> <span class="check"></span> <span class="box"></span>Remember Me</label>#}
+{#                </div>#}
+                <div class="register_rule">
+                    <label for="reader-me_for_account">注册即表示您同意<a href ="#">《用户注册协议》</a>,<a href ="#">《用户隐私协议》</a>
+                    </label>
+                </div>
+                <div class="divider divider--xs"></div>
+                <button type="button" class="btn btn--wd text-uppercase wave" onclick="registerformSubmit()" >点击注册</button>
+              </form>
+              <div class="card--form__footer"> <a href="javascript:history.back(-1)">&lt;&nbsp;Back</a> </div>
+            </div>
+          </div>
+        </div>
+        <div class="divider divider--xl"></div>
+      </div>
+    </section>
+    
+    <!-- End Content section --> 
+  </div>
+
+
+{% endblock %}

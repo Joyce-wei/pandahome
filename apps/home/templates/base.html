@@ -1,0 +1,591 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <title>熊猫当家</title>
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="熊猫当家">      
+    <meta name="author" content="熊猫当家">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Amazeui -->
+    <link rel="stylesheet" href="{%  static '/vendor/amazeui/css/amazeui.css' %}">
+    <!-- Icon Fonts  -->
+    <link rel="stylesheet" href="{%  static '/font/style.css' %}">
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{%  static '/vendor/waves/waves.css' %}">
+    <link rel="stylesheet" href="{%  static '/vendor/slick/slick.css' %}">
+    <link rel="stylesheet" href="{%  static '/vendor/slick/slick-theme.css' %}">
+    <link rel="stylesheet" href="{%  static '/vendor/bootstrap-select/bootstrap-select.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{%  static '/css/style.css' %}">
+    <link rel="stylesheet" href="{%  static '/css/style-colors.css' %}">
+    <link rel="stylesheet" href="{%  static '/css/toolspanel.css' %}">
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="{%  static '/vendor/rs-plugin/css/settings.css' %}" media="screen" />
+    <!-- Head Libs -->
+    <!--[if IE]>
+    <link rel="stylesheet" href="{%  static '/css/ie.css' %}">
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Modernizr -->
+    <script src="{%  static '/vendor/modernizr/modernizr.js' %}"></script>
+
+
+
+
+  </head>
+  <body >
+
+
+    <div id="loader-wrapper" class="loader-off">
+      <div id="loader"></div>
+    </div>
+
+    <!-- Modal Search -->
+    <div class="overlay overlay-scale">
+      <button type="button" class="overlay-close"> ✕ </button>
+      <div class="overlay__content">
+        <form id="search-form" class="search-form outer" action="#" method="post">
+          <div class="input-group input-group--wd">
+            <input type="text" class=" input--full" placeholder="search text here ...">
+              <span class="input-group__bar"></span>
+            </div>
+          <button class="btn btn--wd text-uppercase wave waves-effect">Search</button>
+        </form>
+      </div>
+    </div>
+    <!-- / end Modal Search -->
+
+    <div class="wrapper">
+      <!-- Header section -->
+      <header class="header header--sticky">
+        <div class="header-line hidden-xs">
+          <div class="container">
+            <div class="pull-left">
+              <div class="social-links social-links--colorize">
+                <ul>
+                  <li class="social-links__item">
+                    <a class="icon icon-facebook" href="#"></a>
+                  </li>
+                  <li class="social-links__item">
+                    <a class="icon icon-twitter" href="#"></a>
+                  </li>
+                  <li class="social-links__item">
+                    <a class="icon icon-google" href="#"></a>
+                  </li>
+                  <li class="social-links__item">
+                    <a class="icon icon-pinterest" href="#"></a>
+                  </li>
+                  <li class="social-links__item">
+                    <a class="icon icon-mail" href="#"></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="pull-right">
+              <div class="user-links">
+                <ul>
+                {% if xmdjusername %}
+                  <li class="user-links__item">
+                    <a href="{% url 'usercenter' %}">{{ xmdjusername }}</a>
+                  </li>
+                  <li class="user-links__item">
+                    <a href="{% url 'logout' %}" onclick="user_logout()">登出</a>
+                  </li>
+                {% else %}
+                  <li class="user-links__item">
+                    <a href="{% url 'logination' %}">登陆</a>
+                  </li>
+                  <li class="user-links__item">
+                    <a href="{% url 'registration' %}">注册</a>
+                  </li>
+                {% endif %}
+
+                  <li  class="user-links__item user-links__item--separate">
+                    <a href="#" class="color-twitter">微博登陆</a> / <a href="#" class="color-openid">微信登陆</a> / <a href="#" class="color-facebook">QQ登陆</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__dropdowns-container">
+          <div class="header__dropdowns">
+            <div class="header__search pull-left">
+              <a href="#" class="btn dropdown-toggle btn--links--dropdown header__dropdowns__button search-open">   <span class="icon icon-search"></span>
+              </a>
+            </div>
+              {% block cart_header %}
+
+              {% endblock %}
+
+            <div class="dropdown pull-right">
+              <a href="#" class="btn dropdown-toggle btn--links--dropdown header__dropdowns__button" data-toggle="dropdown">
+                <span class="icon icon-dots"></span>
+              </a>
+              <ul class="dropdown-menu ul-row animated fadeIn" role="menu">
+                <!-- currency start 
+                <li class='li-col currency'>
+                  <h4>Currency</h4>
+                  <ul>
+                    <li class="currency__item active">
+                      <a href="#">
+                        <span>$</span>US Dollar
+                      </a>
+                    </li>
+                    <li class="currency__item">
+                      <a href="#">
+                        <span>€</span>Euro
+                      </a>
+                    </li>
+                    <li class="currency__item">
+                      <a href="#">
+                        <span>£</span>British Pound
+                      </a>
+                    </li>
+                    <li class="currency__item">
+                      <a href="#">
+                        <span>¥</span>Japanese Yen
+                      </a>
+                    </li>
+                    <li class="currency__item">
+                      <a href="#">
+                        <span>₹</span>Indian Rupee
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                -->
+                <!-- internalization 
+                <li class='li-col languages languages--flag'>
+                  <h4>Language</h4>
+                  <ul>
+                    <li class="languages__item active">
+                      <a href="#">
+                        <span class="languages__item__flag flag">
+                          <img src="static/images/flags/ch.png" alt=""/>
+                        </span>
+                        <span class="languages__item__label">中文</span>
+                      </a>
+                    </li>
+                    <li class="languages__item active">
+                      <a href="#">
+                        <span class="languages__item__flag flag">
+                          <img src="static/images/flags/gb.png" alt=""/>
+                        </span>
+                        <span class="languages__item__label">En</span>
+                      </a>
+                    </li>
+                    <li class="languages__item">
+                      <a href="#">
+                        <span class="languages__item__flag flag">
+                          <img src="static/images/flags/de.png" alt=""/>
+                        </span>
+                        <span class="languages__item__label">De</span>
+                      </a>
+                    </li>
+                    <li class="languages__item">
+                      <a href="#">
+                        <span class="languages__item__flag flag">
+                          <img src="static/images/flags/fr.png" alt=""/>
+                        </span>
+                        <span class="languages__item__label">Fr</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                -->
+                <li class='li-col list-user-menu'>
+                  <a href="account.html"><h4> {% if xmdjusername %}{{ xmdjusername }}{% else %}我的熊猫{% endif %}</h4></a>
+                  <ul>
+                    <li>
+                      <a href="account-order.html">我的订单</a>
+                    </li>
+                    <li>
+                      <a href="account-address.html">我的收货地址</a>
+                    </li>
+                    <li>
+                      <a href="gallery.html">我的收藏</a>
+                    </li>
+                    <li>
+                      <a href="#">我的购物车</a>
+                    </li>
+                    <li>
+                      <a href="gallery.html">我的足迹</a>
+                    </li>
+                    <li>
+                      <a href="contact.html">联系我们</a>
+                    </li>
+                       {% if xmdjusername %}
+                    <li>
+                      <a href="{% url 'logout' %}">登出</a>
+                    </li>
+                      {% else %}
+                    <li>
+                      <a href="{% url 'logination' %}">登陆</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'registration' %}">注册</a>
+                    </li>
+                      {% endif %}
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-wd" id="navbar">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" id="slide-nav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!--  Logo  -->
+              <a class="logo" href="index.html">
+                <img class="logo-default" src="{%  static '/images/logo.png' %}" alt=""/>
+                <img class="logo-mobile" src="{%  static '/images/logo-mobile.png' %}" alt=""/>
+                <img class="logo-transparent" src="{%  static '/images/logo-transparent.png' %}" alt=""/>
+              </a>
+              <!-- End Logo -->
+            </div>
+            <div class="pull-left search-focus-fade" id="slidemenu">
+              <div class="slidemenu-close visible-xs">✕</div>
+              <ul class="nav navbar-nav">
+                <!-- 首页-->
+                <li>
+                  <a href="{% url 'index' %}" >
+                    <span class="link-name">首页</span>
+                    <span class="caret caret--dots"></span>
+                  </a>
+                </li>
+                <!-- 活动-->
+                <li>
+                  <a href="{% url 'index' %}" class="dropdown-toggle">
+                    <span class="link-name">活动</span>
+                    <span class="caret caret--dots"></span>
+                  </a>
+                  <ul class="dropdown-menu animated fadeIn" role="menu" id="activitycategory">
+
+                  </ul>
+                </li>
+                <!-- 论坛-->
+                <li>
+                  <a href="blog.html"  class="dropdown-toggle">
+                    <span class="link-name">论坛</span>
+                    <span class="caret caret--dots"></span>
+                  </a>
+                  <ul class="dropdown-menu animated fadeIn" role="menu">
+                    <li>
+                      <a href="blog.html">Blog Posts</a>
+                    </li>
+                    <li>
+                      <a href="blogpost.html">Blog Post</a>
+                    </li>
+                    <li>
+                      <a href="blog-right-column.html">Blog With Column</a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- 特惠商品-->
+                <li>
+                  <a href="listing.html"  class="dropdown-toggle">
+                    <span class="link-name">特惠商品</span>
+                    <span class="caret caret--dots"></span>
+                  </a>
+                </li>
+                <!-- 商品类别-->
+                <li class="menu-large">
+                  <a href="listing.html" class="dropdown-toggle">
+                    <span class="link-name">商品类别</span>
+                    <span class="caret caret--dots"></span>
+                  </a>
+                  <div class="dropdown-menu megamenu animated fadeIn">
+                    <div class="container">
+                      <ul class="megamenu__columns"  id="categorys">
+
+
+
+
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- End Header section -->
+      <div id="pageContent" class="page-content">
+        
+        {% block pagecontect %}
+        <!-- END REVOLUTION SLIDER -->
+
+        <!-- End Slider section -->
+        <!-- Content section -->
+       
+        <!-- End Content section -->
+          {% endblock %}
+      </div>
+      <footer class="footer">
+        
+        <div class="footer__column-links">
+          <div class="back-to-top">
+            <a href="#top" class="btn btn--round btn--round--lg">
+              <span class="icon-arrow-up"></span>
+            </a>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 hidden-xs hidden-sm">
+                <!--  Logo  -->
+                <a class="logo logo--footer" href="index.html">
+                  <img src="{% static '/images/logo-transparent.png' %}" alt=""/>
+                </a>
+                <!-- End Logo -->
+                <p>
+                  This is one of the best, most attractive and smartest templates on the market. <strong>
+                    <em>- Adam Smith</em>
+                  </strong>
+                </p>
+              </div>
+              <div class="col-sm-3 col-md-2 mobile-collapse">
+                <h5 class="title text-uppercase mobile-collapse__title">熊猫当家 </h5>
+                <div class="v-links-list mobile-collapse__content">
+                  <ul>
+                    <li>
+                      <a href="about.html">关于我们</a>
+                    </li>
+                    <li>
+                      <a href="contact.html">联系我们</a>
+                    </li>
+                    <li>
+                      <a href="about.html">加入我们</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-3 col-md-2 mobile-collapse">
+                <h5 class="title text-uppercase mobile-collapse__title">服务</h5>
+                <div class="v-links-list mobile-collapse__content">
+                  <ul>
+                    <li>
+                      <a href="contact.html">在线客服</a>
+                    </li>
+                    <li>
+                      <a href="faq.html">帮助 & 问答</a>
+                    </li>
+                    <li>
+                      <a href="contact.html">Call Center</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-3 col-md-2 mobile-collapse">
+                  <h5 class="title text-uppercase mobile-collapse__title"><a href="account.html">{% if xmdjusername %}{{ xmdjusername }}{% else %}我的熊猫{% endif %}</a></h5>
+                <div class="v-links-list mobile-collapse__content">
+                  <ul>
+                    <li>
+                      <a href="account-order.html">我的订单</a>
+                    </li>
+                    <li>
+                      <a href="gallery.html">我的收藏</a>
+                    </li>
+                    <li>
+                      <a href="#">我的购物车</a>
+                    </li>
+                    <li>
+                      <a href="gallery.html">我的足迹</a>
+                    </li>
+                    <li>
+                      <a href="contact.html">联系我们</a>
+                    </li>
+                      {% if xmdjusername %}
+                    <li>
+                      <a href="{% url 'logout' %}">登出</a>
+                    </li>
+                      {% else %}
+                    <li>
+                      <a href="{% url 'logination' %}">登陆</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'registration' %}">注册</a>
+                    </li>
+                      {% endif %}
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-3 col-md-2 mobile-collapse">
+                <h5 class="title text-uppercase mobile-collapse__title">合作链接</h5>
+                <div class="v-links-list mobile-collapse__content">
+                  <ul>
+                    <li>
+                      <a href="#">网站链接1</a>
+                    </li>
+                    <li>
+                      <a href="#">网站链接2</a>
+                    </li>
+                    <li>
+                      <a href="#">网站链接3</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="container">
+            <div class="pull-left text-uppercase">
+              © 2017 <a href="#">熊猫当家</a>. All Rights Reserved.
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="compare-box" id="compareBox">
+      <div class="container">
+        <div class="compare-box__header">
+          <h3 class="compare-box__header__title">Compare</h3>
+          <div class="compare-box__header__toggle">
+            <span class="compare-box__header__toggle__hide hide-compare">
+              Hide<span class="icon icon-arrow-down"></span>
+            </span>
+            <span class="compare-box__header__toggle__show show-compare">
+              Show<span class="icon icon-arrow-up"></span>
+            </span>
+            <span class="compare-box__header__toggle__close close-compare">
+              <span class="icon icon-clear"></span>
+            </span>
+          </div>
+        </div>
+        <div class="compare-box__items">
+          <ul class="compare-box__items__list compare-carousel nav-top">
+            <li class="compare-box__items__list__item">
+              <div class="compare-box__items__list__item__delete">
+                <a href="#" class="icon icon-clear"></a>
+              </div>
+              <a href="#">
+                <img src="{% static '/images/products/product-2.jpg' %}" alt="">
+              </a>
+            </li>
+            <li class="compare-box__items__list__item empty">
+              <div class="compare-box__items__list__item__num">1</div>
+              <img src="{% static '/images/products/product-empty.png' %}" alt=""/>
+            </li>
+            <li class="compare-box__items__list__item empty">
+              <div class="compare-box__items__list__item__num">2</div>
+              <img src="{% static '/images/products/product-empty.png' %}" alt=""/>
+            </li>
+            <li class="compare-box__items__list__item empty">
+              <div class="compare-box__items__list__item__num">3</div>
+              <img src="{% static '/images/products/product-empty.png' %}" alt=""/>
+            </li>
+            <li class="compare-box__items__list__item empty">
+              <div class="compare-box__items__list__item__num">4</div>
+              <img src="{% static '/images/products/product-empty.png' %}" alt=""/>
+            </li>
+            <li class="compare-box__items__list__item empty">
+              <div class="compare-box__items__list__item__num">5</div>
+              <img src="{% static '/images/products/product-empty.png' %}" alt=""/>
+            </li>
+            <li class="compare-box__items__list__item empty">
+              <div class="compare-box__items__list__item__num">6</div>
+              <img src="{% static '/images/products/product-empty.png' %}" alt=""/>
+            </li>
+          </ul>
+          <div class="compare-box__actions">
+            <div class="compare-box__actions__btns">
+              <a href="#" class="btn btn--wd btn--lg text-uppercase">Compare</a>
+              <a href="#" class="btn btn--wd btn--lg btn--light text-uppercase" id="removeAllCompare">Clear All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade bs-example-modal-sm" role="dialog" id="modalAddToCart">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <button type="button" class="close icon-clear" data-dismiss="modal"></button>
+          <div class="text-center">
+            <div class="divider divider--xs"></div>
+            <p>Product added to cart successfully! </p>
+            <div class="divider divider--xs"></div>
+            <a href="#" class="btn btn--wd">Go to Cart</a>
+            <div class="divider divider--xs"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade bs-example-modal-sm" role="dialog" id="modalAddToWishlist">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <button type="button" class="close icon-clear" data-dismiss="modal"></button>
+          <div class="text-center">
+            <div class="divider divider--xs"></div>
+            <div class="loading">
+              <div class="divider divider--sm"></div>
+              <div class="loader">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+            </div>
+            <p class="success">Product added to wishlist successfully! </p>
+            <div class="divider divider--xs"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Vendor -->
+    <!-- jQuery 1.10.1-->
+    <script src="{%  static '/vendor/jquery/jquery.js' %}"></script>
+   <!-- Axios js -->
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{%  static '/js/axios.config.js' %}"> </script>
+     <script src="{%  static '/js/base.js' %}"></script>
+    <script src="{%  static '/js/initial_index.js' %}"> </script>
+    <!-- Bootstrap 3-->
+    <script src="{%  static '/vendor/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- Specific Page Vendor -->
+    <script src="{%  static '/vendor/waves/waves.min.js' %}"></script>
+    <script src="{%  static '/vendor/slick/slick.min.js' %}"></script>
+    <script src="{%  static '/vendor/bootstrap-select/bootstrap-select.min.js' %}"></script>
+    <script src="{%  static '/vendor/parallax/jquery.parallax-1.1.3.js' %}"></script>
+    <script src="{%  static '/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+    <script src="{%  static '/vendor/waypoints/sticky.min.js' %}"></script>
+    <script src="{%  static '/vendor/doubletaptogo/doubletaptogo.js' %}"></script>
+    <script src="{%  static '/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{%  static '/vendor/countdown/jquery.plugin.min.js' %}"></script>
+    <script src="{%  static '/vendor/countdown/jquery.countdown.min.js' %}"></script>
+    <!-- jQuery form validation -->
+    <script src="{%  static '/vendor/form/jquery.form.js' %}"></script>
+    <script src="{%  static '/vendor/form/jquery.validate.min.js' %}"></script>
+    <!-- Custom -->
+
+    <script src="{%  static '/js/custom.js' %}"></script>
+    <script src="{%  static '/js/toolspanel.js' %}"></script>
+
+    <script src="{%  static '/js/user.js' %}"></script>
+
+
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+
+  </body>
+</html>
