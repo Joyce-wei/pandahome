@@ -17,6 +17,7 @@ urlpatterns = [
                url(r'^account_order', views.account_order, name='account_order'),
                url(r'^contact', views.contact, name='contact'),
                url(r'^myfoots', views.myfoots, name='myfoots'),
+               url(r'^faq', views.faq, name='faq'),
 
 
                ]

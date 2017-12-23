@@ -1,0 +1,525 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block headconfig %}<!-- Icon Fonts  -->
+<link rel="stylesheet" href="{% static '/font/style.css' %}">
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="{% static '/vendor/waves/waves.css' %}">
+<link rel="stylesheet" href="{% static '/vendor/slick/slick.css' %}">
+<link rel="stylesheet" href="{% static '/vendor/slick/slick-theme.css' %}">
+<link rel="stylesheet" href="{% static '/vendor/bootstrap-select/bootstrap-select.css' %}">
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="{% static '/vendor/magnific-popup/magnific-popup.css' %}">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{% static '/css/style.css' %}">
+<link rel="stylesheet" href="{% static '/css/style-colors.css' %}">
+
+<!-- Head Libs -->
+
+<!--[if IE]>
+        <link rel="stylesheet" href="{% static '/css/ie.css' %}">
+        <![endif]-->
+<!--[if lte IE 8]>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+        <![endif]-->
+
+<!-- Modernizr -->
+<script src="{% static '/vendor/modernizr/modernizr.js' %}"></script>
+
+{% endblock %}
+{% block pagecontect %}
+  <div id="pageContent"> 
+    
+    <!-- Breadcrumb section -->
+    
+    <section class="breadcrumbs breadcrumbs-boxed">
+      <div class="container">
+        <ol class="breadcrumb breadcrumb--wd">
+          <li><a href="#">Home{{ productid }}</a></li>
+          <li class="active">White Cropped Sweater</li>
+        </ol>
+        <ul id="productOther" class="product-other pull-right hidden-xs">
+          <li class="product-other__link product-prev"><a href="#">Fast Seconds Knit White</a><span class="product-other__link__image"><img src='{% static '/images/products/product-4.jpg' %}'/></span></li>
+          <li class="product-other__link product-next"><a href="#">Unconditional Dress White</a><span class="product-other__link__image"><img src='{% static '/images/products/product-3.jpg' %}'/></span></li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- Content section -->
+   <section class="content">
+      <div class="container">
+        <div class="row product-info-outer">
+          <div class="col-sm-4 col-md-4 col-lg-5 hidden-xs">
+            <div class="product-main-image">
+              <div class="product-main-image__item"><img class="product-zoom" src='{% static '/images/products/product-big-1.jpg' %}' data-zoom-image="{% static '/images/products/product-big-1-zoom.jpg' %}"/></div>
+              <div class="product-main-image__zoom"></div>
+            </div>
+            <div class="product-images-carousel">
+              <ul id="smallGallery">
+                <li><a href="#" data-image="{% static '/images/products/product-big-1.jpg' %}" data-zoom-image="{% static '/images/products/product-big-1-zoom.jpg' %}"><img src="{% static '/images/products/product-small-1.jpg' %}" alt="" /></a></li>
+                <li><a href="#" data-image="{% static '/images/products/product-big-2.jpg' %}" data-zoom-image="{% static '/images/products/product-big-2-zoom.jpg' %}"><img src="{% static '/images/products/product-small-2.jpg' %}" alt="" /></a></li>
+                <li><a href="#" data-image="{% static '/images/products/product-big-3.jpg' %}" data-zoom-image="{% static '/images/products/product-big-3-zoom.jpg' %}"><img src="{% static '/images/products/product-small-3.jpg' %}" alt="" /></a></li>
+                <li><a href="#" data-image="{% static '/images/products/product-big-4.jpg' %}" data-zoom-image="{% static '/images/products/product-big-4-zoom.jpg' %}"><img src="{% static '/images/products/product-small-4.jpg' %}" alt="" /></a></li>
+                <li><a href="#" data-image="{% static '/images/products/product-big-5.jpg' %}" data-zoom-image="{% static '/images/products/product-big-5-zoom.jpg' %}"><img src="{% static '/images/products/product-small-5.jpg' %}" alt="" /></a></li>
+                <li><a href="http://www.youtube.com/watch?v=JW8M32oHTKw" class="video-link"><img src="{% static '/images/products/product-small-empty.png' %} " alt="" /></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="product-info col-sm-8 col-md-4 col-lg-4">
+            <div class="product-info__title">
+              <h2>White Cropped Sweater</h2>
+              <div class="rating product-info__rating visible-xs"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
+            </div>
+            <div class="product-info__sku pull-right">SKU: 00065 &nbsp;&nbsp;<span class="label label-success">IN STOCK</span></div>
+            <ul id="singleGallery" class="visible-xs">
+              <li><img src="{% static '/images/products/product-big-1.jpg' %}" alt="" /></li>
+              <li><img src="{% static '/images/products/product-big-2.jpg' %}" alt="" /></li>
+              <li><img src="{% static '/images/products/product-big-3.jpg' %}" alt="" /></li>
+              <li><img src="{% static '/images/products/product-big-4.jpg' %}" alt="" /></li>
+              <li><img src="{% static '/images/products/product-big-5.jpg' %}" alt="" /></li>
+            </ul>
+            <div class="price-box product-info__price"><span class="price-box__new">$65.00</span> <span class="price-box__old">$84.00</span></div>
+            <div class="rating product-info__rating hidden-xs"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
+            <div class="divider divider--xs product-info__divider"></div>
+            <div class="product-info__description"> Vestibulum justo. Nulla mauris ipsum, convallis ut, vestibulum eu, tincidunt vel, nisi. Curabitur molestie euismod erat. Proin eros odio, mattis rutrum, pulvinar et, egestas vitae, magna. Integer semper, velit ut interdum malesuada, diam dolor pellentesque lacus, vitae commodo orci nisi et sem. Pellentesque adipiscing nisi. Nulla facilisi. Mauris lacinia lectus sit amet felis. </div>
+            <div class="divider divider--xs product-info__divider"></div>
+            <label>Size:</label>
+            <ul class="options-swatch options-swatch--size options-swatch--lg">
+              <li>XS</li>
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+              <li>XL</li>
+              <li>XXL</li>
+              <li>XXXL</li>
+            </ul>
+            <div class="divider divider--xs"></div>
+            <label>Color:</label>
+            <ul class="options-swatch options-swatch--color options-swatch--lg">                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/blue.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/yellow.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/green.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/dark-grey.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/grey.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/red.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/white.png' %} " width="10" height="10" alt=""/></span></a></li>
+</ul>
+            <div class="divider divider--sm"></div>
+            <label>Quantity:</label>
+            <div class="outer">
+              <div class="input-group-qty pull-left"> <span class="pull-left"> </span>
+                <input type="text" name="quant[1]" class="input-number input--wd input-qty pull-left" value="1" min="1" max="100">
+                <span class="pull-left btn-number-container">
+                <button type="button" class="btn btn-number btn-number--plus" data-type="plus" data-field="quant[1]"> + </button>
+                <button type="button" class="btn btn-number btn-number--minus" disabled="disabled" data-type="minus" data-field="quant[1]"> &#8211; </button>
+                </span> </div>
+              <div class="pull-left">
+                <button class="btn btn--wd text-uppercase">Add to Cart</button>
+              </div>
+              <div class="social-links social-links--colorize social-links--invert social-links--padding pull-right">
+                <ul>
+                  <li class="social-links__item"><a class="icon icon-facebook tooltip-link" href="#" data-placement="top" data-toggle="tooltip" data-original-title="Share on facebook"></a></li>
+                  <li class="social-links__item"><a class="icon icon-twitter tooltip-link" href="#" data-placement="top" data-toggle="tooltip" data-original-title="Share on twitter"></a></li>
+                  <li class="social-links__item"><a class="icon icon-google tooltip-link" href="#" data-placement="top" data-toggle="tooltip" data-original-title="Share on google"></a></li>
+                  <li class="social-links__item"><a class="icon icon-pinterest tooltip-link" href="#" data-placement="top" data-toggle="tooltip" data-original-title="Share on pinterest"></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="divider divider--xs"></div>
+            <ul class="product-links product-links--inline">
+              <li><a href="#"><span class="icon icon-bars"></span>Add to compare</a></li>
+              <li><a href="#"><span class="icon icon-favorite"></span>Add to wishlist</a></li>
+              <li><a href="#"><span class="icon icon-mail-fill"></span>Email to friend</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-3">
+            <h4>CUSTOM HTML BLOCK</h4>
+            <div class="card">
+              <div class="card__row"> You can add your content here, like promotions or some additional info </div>
+              <a href="#" class="card__row card__row--icon">
+              <div class="card__row--icon__icon"> <span class="icon icon-shop-label"></span></div>
+              <div class="card__row--icon__text">
+                <div class="card__row__title">Special offer: 1+1=3</div>
+                Get a gift!</div>
+              </a> <a href="#" class="card__row card__row--icon">
+              <div class="card__row--icon__icon"> <span class="icon icon-money"></span></div>
+              <div class="card__row--icon__text">
+                <div class="card__row__title">Free Reward Card</div>
+                Worth $10, $50, $100. <br>
+              </div>
+              </a> <a href="#" class="card__row card__row--icon">
+              <div class="card__row--icon__icon"> <span class="icon icon-identification-alt"></span></div>
+              <div class="card__row--icon__text">
+                <div class="card__row__title">Join to our Club</div>
+              </div>
+              </a> <a class="card__row card__row--icon">
+              <div class="card__row--icon__icon"> <span class="icon icon-truck"></span></div>
+              <div class="card__row--icon__text">
+                <div class="card__row__title">Free shipping</div>
+              </div>
+              </a> </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div id="navProduct">
+        <div class="nav-product">
+          <div class="container">
+            <ul>
+              <li class="nav-product__item" data-target="Description"><a href="#Description">Description</a></li>
+              <li class="nav-product__item" data-target="Additional"><a href="#Additional">Additional Info</a></li>
+              <li class="nav-product__item" data-target="CustomBlock"><a href="#CustomBlock">Custom Blocks</a></li>
+              <li class="nav-product__item" data-target="Reviews"><a href="#Reviews">Reviews</a></li>
+              <li class="nav-product__item" data-target="Tags"><a href="#Tags">Tags</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content top-null">
+      <div class="container product-additional">
+        <section class="product-additional__box" id="Description">
+          <h3 class="text-uppercase">Description</h3>
+          <p>Time to have a serious '90s moment! This black dress features thin shoulder straps, a delicate V-neckline, and a super babely high slit. Zip/hook closure at back. Wear it with slide sandals and statement jewelry! By Nasty Gal.</p>
+          <ul class="simple-list">
+            <li>Spandex</li>
+            <li>29&quot;/73.5cm bust</li>
+            <li>43&quot;/109cm length</li>
+            <li> Model is wearing size small</li>
+            <li> Measurements taken from size small</li>
+            <li> Machine wash cold</li>
+            <li> Made in the USA</li>
+          </ul>
+        </section>
+        <section class="product-additional__box" id="Additional">
+          <h3 class="text-uppercase">Additional info </h3>
+          <h5 class="text-uppercase">Models Measurements</h5>
+          <div class="row">
+            <div class="col-md-5">
+              <table class="table table-striped">
+                <tbody>
+                  <tr>
+                    <td>Height:</td>
+                    <td>1.77</td>
+                  </tr>
+                  <tr>
+                    <td>Bust/Chest (cm):</td>
+                    <td>83</td>
+                  </tr>
+                  <tr>
+                    <td>Waist (cm):</td>
+                    <td>57</td>
+                  </tr>
+                  <tr>
+                    <td> Hips (cm):</td>
+                    <td>87</td>
+                  </tr>
+                  <tr>
+                    <td>Model is wearing size:</td>
+                    <td>S</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section class="product-additional__box" id="CustomBlock">
+          <h3 class="text-uppercase">Custom Block</h3>
+          <h5 class="text-uppercase">Shipping</h5>
+          <p>Your order will be shipped directly from the boutique to you. Farfetch ships worldwide using DHL and UPS, and you will be able to track your order at any time. The cost of shipping your order will be calculated at the checkout.<br>
+          </p>
+          <div class="divider divider--xs"></div>
+          <h5 class="text-uppercase">Import duties information</h5>
+          <p>Delivery duties are included in the item price when shipping to all EU countries plus USA, China, Canada, Switzerland, Singapore, Australia, Japan, South Korea, Kuwait, Qatar, U.A.E, Saudi Arabia and Taiwan.This means all import duties are included in your order, so the price you see is the price you pay. You will not receive an additional duty bill from the courier to receive your shipment. If you are ordering from within your own customs zone or country, import duties will not be applicable anyway, however you may have to pay VAT or local Sales Taxes where applicable (for the UK and USA these are included at the checkout).</p>
+          <p>Delivery duties are not included in the item price when shipping to all other countries. This means you may be liable to pay import duties on receipt of your order.<br>
+          </p>
+          <div class="divider divider--xs"></div>
+          <h5 class="text-uppercase">Free returns pick-up</h5>
+          <p>You have 14 days from receiving your order to return the item to the boutique using our free returns pick-up service. We strongly recommend that you book your free returns pick-up within 7 days of receiving your order to ensure that it arrives back to the boutique in time. Please note for standard orders we can only collect returns from the same country to which your order was delivered. For click and collect orders we can collect your return from the country your order was delivered to and also the country of the original boutique you ordered from. We are unable to accept returns of earrings for hygiene reasons. We are also unable to accept returns of fine Jewellery. Click here to read our full returns policy.</p>
+        </section>
+        <section class="product-additional__box" id="Reviews">
+          <h3 class="text-uppercase">Reviews</h3>
+          <p class="hidden">Be the first to review this product</p>
+          <div class="row">
+            <div class="col-sm-5 col-md-4 col-lg-3">
+              <div class="rating-extended row">
+                <div class="col-lg-12">
+                  <h1 class="rating-extended__num pull-left"> 4.75</h1>
+                  <div class="rating"> <span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star empty-star"></span> </div>
+                  <div> <span class="icon icon-man"></span> 20 reviews</div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12">
+                  <div class="progress"><span class="rating-extended__label">5 stars</span>
+                    <div class="progress-bar progress-bar-five" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+                    <span class="rating-extended__reviews-count">10</span> </div>
+                  <div class="clearfix"></div>
+                  <div class="progress"><span class="rating-extended__label">4 stars</span>
+                    <div class="progress-bar progress-bar-four" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
+                    <span class="rating-extended__reviews-count">4</span> </div>
+                  <div class="clearfix"></div>
+                  <div class="progress"><span class="rating-extended__label">3 stars</span>
+                    <div class="progress-bar progress-bar-three" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
+                    <span class="rating-extended__reviews-count">3</span> </div>
+                  <div class="clearfix"></div>
+                  <div class="progress"><span class="rating-extended__label">2 stars</span>
+                    <div class="progress-bar progress-bar-two" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 15%"></div>
+                    <span class="rating-extended__reviews-count">2</span> </div>
+                  <div class="clearfix"></div>
+                  <div class="progress"><span class="rating-extended__label">1 stars</span>
+                    <div class="progress-bar progress-bar-one" role="progressbar" aria-valuenow="20"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                    <span class="rating-extended__reviews-count">1</span> </div>
+                </div>
+              </div>
+              <div><a href="#" class="custom-color underline">Add your review</a> </div>
+              <div class="divider divider--md"></div>
+            </div>
+            <div class="col-sm-7 col-md-8 col-lg-9"> <a href="#" class="custom-color underline">View all 12 reviews</a>
+              <div class="divider divider--sm"></div>
+              <h4 class="text-uppercase h-pad-xs">Most Helpful Customer Reviews</h4>
+              <div class="review">
+                <div class="rating"> <span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star empty-star"></span> </div>
+                <h5 class="review__title">THIS IS A SKIRT WITH SHORTS IN IT!!</h5>
+                <div class="review__content">I'm so happy at this discovery, omg. I got the beige one with the roses, lipstick prints and champagne glasses. My only issue is that the glasses are upside down but it looks like the rest of the print was made to be used either direction. It doesn't have a belt or beltloops, but it tells you that. Also, the skirt is high waisted. Basically this skirt was full of good surprises. I'll be buying more, especially for 5 bucks. Sorry the photos uploaded sideways.</div>
+                <div class="review__meta">By <a href="#"><strong>ander</strong></a> on November 25, 2014</div>
+                <div class="review__comments"><a href="#">Comments (1)</a></div>
+                <div class="review__helpful">Was this review helpful to you? <a href="#">Yes</a> <a href="#">No</a></div>
+              </div>
+              <div class="review">
+                <div class="rating"> <span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star"></span><span class="icon icon-star empty-star"></span> </div>
+                <h5 class="review__title">Excellent, I appreciate!</h5>
+                <div class="review__content">Lovely dress, just like on the photo. The size is like EU 36. It has loose pants sewn underneath, so you don't have to worry that someone will see your butt ;) i love it, it took a while to get here but its worth the wait especially for the price. it is form fitting so if you aren't sure about what size to order then go with the next size up from what you would normally buy.</div>
+                <div class="review__meta">By <a href="#"><strong>ander</strong></a> on November 25, 2014</div>
+                <div class="review__comments"><a href="#">Comments (1)</a></div>
+                <div class="review__helpful">Was this review helpful to you? <a href="#">Yes</a> <a href="#">No</a></div>
+              </div>
+              <a href="#" class="custom-color underline">View all 12 reviews</a>
+              <div class="divider divider--xs"></div>
+              <a href="#" class="btn btn--wd">Write a review</a> </div>
+          </div>
+        </section>
+        <section class="product-additional__box" id="Tags">
+          <h3 class="text-uppercase">Tags</h3>
+          <p>Other people marked this product with these tags:</p>
+          <ul class="tags-list">
+            <li><a href="#">Coats</a></li>
+            <li><a href="#">Jackets</a></li>
+            <li><a href="#">Jeans</a></li>
+            <li><a href="#">Shirts</a></li>
+            <li><a href="#">Shorts</a></li>
+            <li><a href="#">Skirts</a></li>
+          </ul>
+          <div><a href="#" class="color underline">Add your tags</a> </div>
+        </section>
+      </div>
+    </section>
+    <section class="content content--fill">
+      <div class="container">
+        <h2 class="text-center text-uppercase">Upsells Products</h2>
+        <div class="row product-carousel mobile-special-arrows animated-arrows product-grid four-in-row">
+          <div class="product-preview-wrapper">
+            <div class="product-preview">
+              <div class="product-preview__image"><a href="product.html"><img src="{% static '/images/products/product-empty.png' %} " data-lazy="{% static '/images/products/product-1.jpg' %}" alt=""/></a></div>
+              <div class="product-preview__label product-preview__label--left product-preview__label--new"><span>new</span></div>
+              <div class="product-preview__label product-preview__label--right product-preview__label--sale"><span>sale<br>
+                -10%</span></div>
+              <div class="product-preview__info text-center">
+                <div class="product-preview__info__btns"><a href="#" class="btn btn--round"><span class="icon-ecommerce"></span></a> <a href="quick-view.html" class="btn btn--round btn--dark btn-quickview" data-toggle="modal" data-target="#quickView"><span class="icon icon-eye"></span></a></div>
+                <div class="product-preview__info__title">
+                  <h2><a href="#">Fast Seconds Knit White</a></h2>
+                </div>
+                <div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
+                <ul class="options-swatch options-swatch--color">                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/blue.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/yellow.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/green.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/dark-grey.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/grey.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/red.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/white.png' %} " width="10" height="10" alt=""/></span></a></li>
+</ul>
+                <div class="price-box "><span class="price-box__new">$65.00</span> <span class="price-box__old">$84.00</span></div>
+                <div class="product-preview__info__description">
+                  <p>Nulla at mauris leo. Donec quis ex elementum, tincidunt elit quis, cursus tortor. Sed sollicitudin enim metus, ut hendrerit orci dignissim venenatis.</p>
+                  <p>Suspendisse consectetur odio diam, ut consequat quam aliquet at.</p>
+                </div>
+                <div class="product-preview__info__link"><a href="#" class="compare-link"><span class="icon icon-bars"></span><span class="product-preview__info__link__text">Add to compare</span></a> <a href="#"><span class="icon icon-favorite"></span><span class="product-preview__info__link__text">Add to wishlist</span></a><a href="#" class="btn btn--wd buy-link"><span class="icon icon-ecommerce"></span><span class="product-preview__info__link__text">Add to cart</span></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-preview-wrapper">
+            <div class="product-preview">
+              <div class="product-preview__image"><a href="product.html"><img src="{% static '/images/products/product-empty.png' %} " data-lazy="{% static '/images/products/product-2.jpg' %}"  alt=""/></a></div>
+              <div class="product-preview__info text-center">
+                <div class="product-preview__info__btns"><a href="#" class="btn btn--round"><span class="icon-ecommerce"></span></a> <a href="quick-view.html" class="btn btn--round btn--dark btn-quickview" data-toggle="modal" data-target="#quickView"><span class="icon icon-eye"></span></a></div>
+                <div class="product-preview__info__title">
+                  <h2><a href="#">Fast Seconds Knit White</a></h2>
+                </div>
+                <div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
+                <ul class="options-swatch options-swatch--color">                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/blue.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/yellow.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/green.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/dark-grey.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/grey.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/red.png' %} " width="10" height="10" alt=""/></span></a></li>
+                  <li><a href="#"><span class="swatch-label"><img src="{% static '/images/colors/white.png' %} " width="10" height="10" alt=""/></span></a></li>
+</ul>
+                <div class="price-box"><span class="price-box__new">$65.00</span> <span class="price-box__old">$84.00</span></div>
+                <div class="product-preview__info__description">
+                  <p>Nulla at mauris leo. Donec quis ex elementum, tincidunt elit quis, cursus tortor. Sed sollicitudin enim metus, ut hendrerit orci dignissim venenatis.</p>
+                  <p>Suspendisse consectetur odio diam, ut consequat quam aliquet at.</p>
+                </div>
+                <div class="product-preview__info__link"><a href="#" class="compare-link"><span class="icon icon-bars"></span><span class="product-preview__info__link__text">Add to compare</span></a> <a href="#"><span class="icon icon-favorite"></span><span class="product-preview__info__link__text">Add to wishlist</span></a><a href="#" class="btn btn--wd buy-link"><span class="icon icon-ecommerce"></span><span class="product-preview__info__link__text">Add to cart</span></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-preview-wrapper">
+            <div class="product-preview">
+              <div class="product-preview__image"><a href="product.html"><img src="{% static '/images/products/product-empty.png' %} " data-lazy="{% static '/images/products/product-3.jpg' %}"  alt=""/></a></div>
+              <div class="product-preview__info text-center">
+                <div class="product-preview__info__btns"><a href="#" class="btn btn--round"><span class="icon-ecommerce"></span></a> <a href="quick-view.html" class="btn btn--round btn--dark btn-quickview" data-toggle="modal" data-target="#quickView"><span class="icon icon-eye"></span></a></div>
+                <div class="product-preview__info__title">
+                  <h2><a href="#">Fast Seconds Knit White</a></h2>
+                </div>
+                <div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
+                <div class="price-box">$65.00</div>
+                <div class="product-preview__info__description">
+                  <p>Nulla at mauris leo. Donec quis ex elementum, tincidunt elit quis, cursus tortor. Sed sollicitudin enim metus, ut hendrerit orci dignissim venenatis.</p>
+                  <p>Suspendisse consectetur odio diam, ut consequat quam aliquet at.</p>
+                </div>
+                <div class="product-preview__info__link"><a href="#" class="compare-link"><span class="icon icon-bars"></span><span class="product-preview__info__link__text">Add to compare</span></a> <a href="#"><span class="icon icon-favorite"></span><span class="product-preview__info__link__text">Add to wishlist</span></a><a href="#" class="btn btn--wd buy-link"><span class="icon icon-ecommerce"></span><span class="product-preview__info__link__text">Add to cart</span></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-preview-wrapper">
+            <div class="product-preview">
+              <div class="product-preview__image"><a href="product.html"><img src="{% static '/images/products/product-empty.png' %} " data-lazy="{% static '/images/products/product-4.jpg' %}"  alt=""/></a></div>
+              <div class="product-preview__info text-center">
+                <div class="product-preview__info__btns"><a href="#" class="btn btn--round"><span class="icon-ecommerce"></span></a> <a href="quick-view.html" class="btn btn--round btn--dark btn-quickview" data-toggle="modal" data-target="#quickView"><span class="icon icon-eye"></span></a></div>
+                <div class="product-preview__info__title">
+                  <h2><a href="#">Fast Seconds Knit White</a></h2>
+                </div>
+                <div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
+                <div class="price-box">$65.00</div>
+                <div class="product-preview__info__description">
+                  <p>Nulla at mauris leo. Donec quis ex elementum, tincidunt elit quis, cursus tortor. Sed sollicitudin enim metus, ut hendrerit orci dignissim venenatis.</p>
+                  <p>Suspendisse consectetur odio diam, ut consequat quam aliquet at.</p>
+                </div>
+                <div class="product-preview__info__link"><a href="#" class="compare-link"><span class="icon icon-bars"></span><span class="product-preview__info__link__text">Add to compare</span></a> <a href="#"><span class="icon icon-favorite"></span><span class="product-preview__info__link__text">Add to wishlist</span></a><a href="#" class="btn btn--wd buy-link"><span class="icon icon-ecommerce"></span><span class="product-preview__info__link__text">Add to cart</span></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-preview-wrapper">
+            <div class="product-preview">
+              <div class="product-preview__image"><a href="product.html"><img src="{% static '/images/products/product-empty.png' %} " data-lazy="{% static '/images/products/product-5.jpg' %}"  alt=""/></a></div>
+              <div class="product-preview__info text-center">
+                <div class="product-preview__info__btns"><a href="#" class="btn btn--round"><span class="icon-ecommerce"></span></a> <a href="quick-view.html" class="btn btn--round btn--dark btn-quickview" data-toggle="modal" data-target="#quickView"><span class="icon icon-eye"></span></a></div>
+                <div class="product-preview__info__title">
+                  <h2><a href="#">Fast Seconds Knit White</a></h2>
+                </div>
+                <div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
+                <div class="price-box">$65.00</div>
+                <div class="product-preview__info__description">
+                  <p>Nulla at mauris leo. Donec quis ex elementum, tincidunt elit quis, cursus tortor. Sed sollicitudin enim metus, ut hendrerit orci dignissim venenatis.</p>
+                  <p>Suspendisse consectetur odio diam, ut consequat quam aliquet at.</p>
+                </div>
+                <div class="product-preview__info__link"><a href="#" class="compare-link"><span class="icon icon-bars"></span><span class="product-preview__info__link__text">Add to compare</span></a> <a href="#"><span class="icon icon-favorite"></span><span class="product-preview__info__link__text">Add to wishlist</span></a><a href="#" class="btn btn--wd buy-link"><span class="icon icon-ecommerce"></span><span class="product-preview__info__link__text">Add to cart</span></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-preview-wrapper">
+            <div class="product-preview">
+              <div class="product-preview__image"><a href="product.html"><img src="{% static '/images/products/product-empty.png' %} " data-lazy="{% static '/images/products/product-6.jpg' %}"  alt=""/></a></div>
+              <div class="product-preview__info text-center">
+                <div class="product-preview__info__btns"><a href="#" class="btn btn--round"><span class="icon-ecommerce"></span></a> <a href="quick-view.html" class="btn btn--round btn--dark btn-quickview" data-toggle="modal" data-target="#quickView"><span class="icon icon-eye"></span></a></div>
+                <div class="product-preview__info__title">
+                  <h2><a href="#">Fast Seconds Knit White</a></h2>
+                </div>
+                <div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
+                <div class="price-box">$65.00</div>
+                <div class="product-preview__info__description">
+                  <p>Nulla at mauris leo. Donec quis ex elementum, tincidunt elit quis, cursus tortor. Sed sollicitudin enim metus, ut hendrerit orci dignissim venenatis.</p>
+                  <p>Suspendisse consectetur odio diam, ut consequat quam aliquet at.</p>
+                </div>
+                <div class="product-preview__info__link"><a href="#" class="compare-link"><span class="icon icon-bars"></span><span class="product-preview__info__link__text">Add to compare</span></a> <a href="#"><span class="icon icon-favorite"></span><span class="product-preview__info__link__text">Add to wishlist</span></a><a href="#" class="btn btn--wd buy-link"><span class="icon icon-ecommerce"></span><span class="product-preview__info__link__text">Add to cart</span></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-preview-wrapper">
+            <div class="product-preview">
+              <div class="product-preview__image"><a href="product.html"><img src="{% static '/images/products/product-empty.png' %} " data-lazy="{% static '/images/products/product-7.jpg' %}"  alt=""/></a></div>
+              <div class="product-preview__info text-center">
+                <div class="product-preview__info__btns"><a href="#" class="btn btn--round"><span class="icon-ecommerce"></span></a> <a href="quick-view.html" class="btn btn--round btn--dark btn-quickview" data-toggle="modal" data-target="#quickView"><span class="icon icon-eye"></span></a></div>
+                <div class="product-preview__info__title">
+                  <h2><a href="#">Fast Seconds Knit White</a></h2>
+                </div>
+                <div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
+                <div class="price-box">$65.00</div>
+                <div class="product-preview__info__description">
+                  <p>Nulla at mauris leo. Donec quis ex elementum, tincidunt elit quis, cursus tortor. Sed sollicitudin enim metus, ut hendrerit orci dignissim venenatis.</p>
+                  <p>Suspendisse consectetur odio diam, ut consequat quam aliquet at.</p>
+                </div>
+                <div class="product-preview__info__link"><a href="#" class="compare-link"><span class="icon icon-bars"></span><span class="product-preview__info__link__text">Add to compare</span></a> <a href="#"><span class="icon icon-favorite"></span><span class="product-preview__info__link__text">Add to wishlist</span></a><a href="#" class="btn btn--wd buy-link"><span class="icon icon-ecommerce"></span><span class="product-preview__info__link__text">Add to cart</span></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="product-preview-wrapper">
+            <div class="product-preview">
+              <div class="product-preview__image"><a href="product.html"><img src="{% static '/images/products/product-empty.png' %} " data-lazy="{% static '/images/products/product-8.jpg' %}"  alt=""/></a></div>
+              <div class="product-preview__info text-center">
+                <div class="product-preview__info__btns"><a href="#" class="btn btn--round"><span class="icon-ecommerce"></span></a> <a href="quick-view.html" class="btn btn--round btn--dark btn-quickview" data-toggle="modal" data-target="#quickView"><span class="icon icon-eye"></span></a></div>
+                <div class="product-preview__info__title">
+                  <h2><a href="#">Fast Seconds Knit White</a></h2>
+                </div>
+                <div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
+                <div class="price-box">$65.00</div>
+                <div class="product-preview__info__description">
+                  <p>Nulla at mauris leo. Donec quis ex elementum, tincidunt elit quis, cursus tortor. Sed sollicitudin enim metus, ut hendrerit orci dignissim venenatis.</p>
+                  <p>Suspendisse consectetur odio diam, ut consequat quam aliquet at.</p>
+                </div>
+                <div class="product-preview__info__link"><a href="#" class="compare-link"><span class="icon icon-bars"></span><span class="product-preview__info__link__text">Add to compare</span></a> <a href="#"><span class="icon icon-favorite"></span><span class="product-preview__info__link__text">Add to wishlist</span></a><a href="#" class="btn btn--wd buy-link"><span class="icon icon-ecommerce"></span><span class="product-preview__info__link__text">Add to cart</span></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Content section --> 
+    
+  </div>
+  {% endblock %}
+
+ {% block bodyjs %}
+<!-- Vendor --> 
+<!-- jQuery 1.10.1--> 
+<script src="{% static '/vendor/jquery/jquery.js' %}"></script>
+<!-- Bootstrap 3--> 
+<script src="{% static '/vendor/bootstrap/bootstrap.min.js' %}"></script>
+<!-- Specific Page Vendor --> 
+<script src="{% static '/vendor/waves/waves.min.js' %}"></script>
+<script src="{% static '/vendor/slick/slick.min.js' %}"></script>
+<script src="{% static '/vendor/bootstrap-select/bootstrap-select.min.js' %}"></script>
+<script src="{% static '/vendor/parallax/jquery.parallax-1.1.3.js' %}"></script>
+<script src="{% static '/vendor/elevatezoom/jquery.elevatezoom.js' %}"></script>
+<script src="{% static '/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+<script src="{% static '/vendor/waypoints/sticky.min.js' %}"></script>
+<script src="{% static '/vendor/doubletaptogo/doubletaptogo.js' %}"></script>
+<script src="{% static '/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+<!-- Magnific Popup core JS file --> 
+<script src="{% static '/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static '/vendor/countdown/jquery.plugin.min.js' %}"></script>
+<script src="{% static '/vendor/countdown/jquery.countdown.min.js' %}"></script>
+<!-- jQuery form validation --> 
+<script src="{% static '/vendor/form/jquery.form.js' %}"></script>
+<script src="{% static '/vendor/form/jquery.validate.min.js' %}"></script>
+<!-- Custom --> 
+<script src="{% static '/js/custom.js' %}"></script>
+ <!-- Axios js -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="{%  static '/js/axios.config.js' %}"> </script>
+        <script src="{%  static '/js/initial_base.js' %}"></script>
+ {% endblock %}

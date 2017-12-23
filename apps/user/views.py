@@ -40,5 +40,7 @@ def contact(request):
 def myfoots(request):
     return render(request, "myfoots.html")
 
+def faq(request):
+    return render(request, "faq.html")
 
 

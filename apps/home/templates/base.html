@@ -8,7 +8,7 @@
     <meta name="keywords" content="HTML5 Template" />
     <meta name="description" content="熊猫当家">      
     <meta name="author" content="熊猫当家">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="{% static '/images/favicon.ico' %}">
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -28,7 +28,7 @@
       <div class="overlay__content">
         <form id="search-form" class="search-form outer" action="#" method="post">
           <div class="input-group input-group--wd">
-            <input type="text" class=" input--full" placeholder="search text here ...">
+            <input type="text" class=" input--full" placeholder="search text here .">
               <span class="input-group__bar"></span>
             </div>
           <button class="btn btn--wd text-uppercase wave waves-effect">Search</button>
@@ -67,10 +67,10 @@
               <div class="user-links">
                 <ul >
                   <li class="user-links__item" >
-                    <a id = "user_links_01" href="../user/logination">登陆</a>
+                    <a id = "user_links_01" href="/user/logination">登陆</a>
                   </li>
                   <li class="user-links__item" >
-                    <a id = "user_links_02" href="../user/registration">注册</a>
+                    <a id = "user_links_02" href="/user/registration">注册</a>
                   </li>
                   <li  class="user-links__item user-links__item--separate">
                     <a href="#" class="color-twitter">微博登陆</a> / <a href="#" class="color-openid">微信登陆</a> / <a href="#" class="color-facebook">QQ登陆</a>
@@ -233,13 +233,13 @@
                 </li>
                 -->
                 <li class='li-col list-user-menu'>
-                  <a id = "list_user_menu_title" href="../user/logination"><h4> 我的熊猫</h4></a>
+                  <a id = "list_user_menu_title" href="/user/logination"><h4> 我的熊猫</h4></a>
                   <ul id = "list_user_menu_category">
                     <li>
-                      <a href="../user/account_order">我的订单</a>
+                      <a href="/user/account_order">我的订单</a>
                     </li>
                     <li>
-                      <a href="../user/account_address">我的收货地址</a>
+                      <a href="/user/account_address">我的收货地址</a>
                     </li>
                     <li>
                       <a href="#">我的收藏</a>
@@ -248,10 +248,13 @@
                       <a href="#">我的购物车</a>
                     </li>
                     <li>
-                      <a href="../user/myfoots">我的足迹</a>
+                      <a href="/user/myfoots">我的足迹</a>
                     </li>
                     <li>
-                      <a href="../user/contact">联系我们</a>
+                      <a href="/user/contact">联系我们</a>
+                    </li>
+                    <li>
+                      <a href="/user/faq">常见问题</a>
                     </li>
                   </ul>
                 </li>
@@ -268,7 +271,7 @@
                 <span class="icon-bar"></span>
               </button>
               <!--  Logo  -->
-              <a class="logo" href="index.html">
+              <a class="logo" href="/home/index/">
                 <img class="logo-default" src="{%  static '/images/logo.png' %}" alt=""/>
                 <img class="logo-mobile" src="{%  static '/images/logo-mobile.png' %}" alt=""/>
                 <img class="logo-transparent" src="{%  static '/images/logo-transparent.png' %}" alt=""/>
@@ -285,19 +288,39 @@
                     <span class="caret caret--dots"></span>
                   </a>
                 </li>
-                <!-- 活动-->
+                <!-- 促销活动-->
                 <li>
                   <a href="{% url 'index' %}" class="dropdown-toggle">
-                    <span class="link-name">活动</span>
+                    <span class="link-name">促销活动</span>
                     <span class="caret caret--dots"></span>
                   </a>
                   <ul class="dropdown-menu animated fadeIn" role="menu" id="activitycategory">
 
                   </ul>
                 </li>
-                <!-- 论坛-->
+                <!-- 特惠商品-->
                 <li>
-                  <a href="../blog/blogs"  class="dropdown-toggle">
+                  <a href="/products/listing"  class="dropdown-toggle">
+                    <span class="link-name">特惠商品</span>
+                    <span class="caret caret--dots"></span>
+                  </a>
+                </li>
+                <!-- 商品类别-->
+                <li class="menu-large">
+                  <a href="/products/listing" class="dropdown-toggle">
+                    <span class="link-name">商品类别</span>
+                    <span class="caret caret--dots"></span>
+                  </a>
+                  <div class="dropdown-menu megamenu animated fadeIn">
+                    <div class="container">
+                      <ul class="megamenu__columns"  id="categorys">
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                  <!-- 论坛-->
+                <li>
+                  <a href="/blog/blogs"  class="dropdown-toggle">
                     <span class="link-name">论坛</span>
                     <span class="caret caret--dots"></span>
                   </a>
@@ -313,29 +336,12 @@
                     </li>
                   </ul>
                 </li>
-                <!-- 特惠商品-->
+                  <!-- 上传图片找商品-->
                 <li>
-                  <a href="listing.html"  class="dropdown-toggle">
-                    <span class="link-name">特惠商品</span>
+                  <a href="/AI/shopping" class="dropdown-toggle">
+                    <span class="link-name">AI购物</span>
                     <span class="caret caret--dots"></span>
                   </a>
-                </li>
-                <!-- 商品类别-->
-                <li class="menu-large">
-                  <a href="listing.html" class="dropdown-toggle">
-                    <span class="link-name">商品类别</span>
-                    <span class="caret caret--dots"></span>
-                  </a>
-                  <div class="dropdown-menu megamenu animated fadeIn">
-                    <div class="container">
-                      <ul class="megamenu__columns"  id="categorys">
-
-
-
-
-                      </ul>
-                    </div>
-                  </div>
                 </li>
               </ul>
             </div>
@@ -372,13 +378,16 @@
                 <div class="v-links-list mobile-collapse__content">
                   <ul>
                     <li>
-                      <a href="about.html">关于我们</a>
+                      <a href="/user/about_us/">关于我们</a>
                     </li>
                     <li>
-                      <a href="contact.html">联系我们</a>
+                      <a href="/user/contact/">联系我们</a>
                     </li>
                     <li>
                       <a href="about.html">加入我们</a>
+                    </li>
+                    <li>
+                      <a href="/home/sitemap">网站地图</a>
                     </li>
                   </ul>
                 </div>
@@ -391,7 +400,7 @@
                       <a href="contact.html">在线客服</a>
                     </li>
                     <li>
-                      <a href="faq.html">帮助 & 问答</a>
+                      <a href="/user/faq/">帮助 & 问答</a>
                     </li>
                     <li>
                       <a href="contact.html">Call Center</a>
@@ -401,15 +410,15 @@
               </div>
               <div class="col-sm-3 col-md-2 mobile-collapse">
                   <h5 class="title text-uppercase mobile-collapse__title">
-                      <a id = "mobile_collapse_title" href="../user/logination">我的熊猫</a>
+                      <a id = "mobile_collapse_title" href="/user/logination">我的熊猫</a>
                   </h5>
                 <div class="v-links-list mobile-collapse__content">
                   <ul id = "mobile_collapse_category">
                     <li>
-                      <a href="../user/account_order">我的订单</a>
+                      <a href="/user/account_order">我的订单</a>
                     </li>
                     <li>
-                      <a href="../user/account_address">我的收货地址</a>
+                      <a href="/user/account_address">我的收货地址</a>
                     </li>
                     <li>
                       <a href="#">我的收藏</a>
@@ -418,12 +427,14 @@
                       <a href="#">我的购物车</a>
                     </li>
                     <li>
-                      <a href="../user/myfoots">我的足迹</a>
+                      <a href="/user/myfoots">我的足迹</a>
                     </li>
                     <li>
-                      <a href="../user/contact">联系我们</a>
+                      <a href="/user/contact">联系我们</a>
                     </li>
-
+                    <li>
+                      <a href="/user/faq">常见问题</a>
+                    </li>
                   </ul>
                 </div>
               </div>

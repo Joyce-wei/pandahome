@@ -5,13 +5,14 @@ from django.shortcuts import render
 
 def index(request):
     #activate('en')
-    if "xmdjusername" in request.COOKIES:
-        xmdjusername = request.COOKIES["xmdjusername"]
-        return render(request, "index.html",{'xmdjusername':xmdjusername})
-    else :
-        return render(request, "index.html")
+    return render(request, "index.html")
 
 
 def base(request):
     #activate('en')
     return render(request, "base.html")
+
+
+def sitemap(request):
+    #activate('en')
+    return render(request, "sitemap.html")

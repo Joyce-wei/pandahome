@@ -31,5 +31,6 @@ urlpatterns += i18n_patterns(
     url(r'^home/', include('home.urls')),
     url(r'^user/', include('user.urls')),
     url(r'^blog/', include('blog.urls')),
-
+    url(r'^products/', include('products.urls')),
+    url(r'^AI/', include('AI.urls')),
 )
