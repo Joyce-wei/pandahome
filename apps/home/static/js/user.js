@@ -17,12 +17,8 @@ function loginformSubmit()
             })
             .then(function (response) {
             console.log(response.data.token);
-            delCookie('xmdjusername');
-            delCookie('xmdjtoken');
-            console.log("clean cookie success");
-            setCookie('xmdjusername',usr , 'd7');
-            setCookie('xmdjtoken',response.data.token , 'd7');
-            console.log("set cookie success");
+            localStorage.setItem("jwttoken", response.data.token);
+            console.log("local storage write success");
             document.getElementById("logination").submit();
             })
             .catch(function (error) {
@@ -64,12 +60,15 @@ function registerformSubmit(){
             })
             .then(function (response) {
             console.log(response.data.token);
-            delCookie('xmdjusername');
-            delCookie('xmdjtoken');
-            console.log("clean cookie success");
-            setCookie('xmdjusername',response.data.username , 'd7');
-            setCookie('xmdjtoken',response.data.token , 'd7');
-            console.log("set cookie success");
+            // delCookie('xmdjusername');
+            // delCookie('xmdjtoken');
+            // console.log("clean cookie success");
+            // setCookie('xmdjusername',response.data.username , 'd7');
+            // setCookie('xmdjtoken',response.data.token , 'd7');
+            // console.log("set cookie success");
+            localStorage.removeItem('jwttoken');
+            localStorage.setItem("jwttoken", response.data.token);
+            console.log("local storage write success");
             document.getElementById("registration").submit();
             })
             .catch(function (error) {
@@ -112,8 +111,9 @@ function check_valid_password(pwd){
 }
 
 function user_logout(){
-    console.log("delete cookie");
-    delCookie('xmdjusername');
-    delCookie('xmdjtoken');
+    // console.log("delete cookie");
+    // delCookie('xmdjusername');
+    // delCookie('xmdjtoken');
+    localStorage.removeItem('jwttoken');
 
 }

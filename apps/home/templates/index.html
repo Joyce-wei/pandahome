@@ -3,81 +3,40 @@
 
 
 
-{% block cart_header %}
-<!-- header cart start -->
-            <div class="header__cart pull-left">
-              <span class="header__cart__indicator hidden-xs">$0.00</span>
-              <div class="dropdown pull-right">
-                <a href="#" class="btn dropdown-toggle btn--links--dropdown header__cart__button header__dropdowns__button" data-toggle="dropdown">
-                  <span class="icon icon-bag-alt"></span>
-                  <span class="badge badge--menu">2</span>
-                </a>
-                <div class="dropdown-menu animated fadeIn shopping-cart" role="menu">
-                  <div class="shopping-cart__settings">
-                    <a href="#" class="icon icon-gear"></a>
-                  </div>
-                  <div class="shopping-cart__top text-uppercase">Your Cart(2)</div>
-                  <ul>
-                    <li class='shopping-cart__item'>
-                      <div class="shopping-cart__item__image pull-left">
-                        <a href="#">
-                          <img src="{%  static '/images/products/product.jpg' %}"" alt=""/>
-                        </a>
-                      </div>
-                      <div class="shopping-cart__item__info">
-                        <div class="shopping-cart__item__info__title">
-                          <h2 class="text-uppercase">
-                            <a href="#">Fast Seconds Knit White</a>
-                          </h2>
-                        </div>
-                        <div class="shopping-cart__item__info__option">Color: Blue</div>
-                        <div class="shopping-cart__item__info__option">Size: Small</div>
-                        <div class="shopping-cart__item__info__price">$84.00</div>
-                        <div class="shopping-cart__item__info__qty">Qty:1</div>
-                        <div class="shopping-cart__item__info__delete">
-                          <a href="#" class="icon icon-clear"></a>
-                        </div>
-                      </div>
-                    </li>
-                    <li class='shopping-cart__item'>
-                      <div class="shopping-cart__item__image pull-left">
-                        <a href="#">
-                          <img src="{%  static '/images/products/product.jpg' %}"" alt=""/>
-                        </a>
-                      </div>
-                      <div class="shopping-cart__item__info">
-                        <div class="shopping-cart__item__info__title">
-                          <h2 class="text-uppercase">
-                            <a href="#">Fast Seconds Knit White</a>
-                          </h2>
-                        </div>
-                        <div class="shopping-cart__item__info__option">Color: Blue</div>
-                        <div class="shopping-cart__item__info__option">Size: Small</div>
-                        <div class="shopping-cart__item__info__price">$84.00</div>
-                        <div class="shopping-cart__item__info__qty">Qty:1</div>
-                        <div class="shopping-cart__item__info__delete">
-                          <a href="#" class="icon icon-clear"></a>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                  <div class="shopping-cart__bottom">
-                    <div class="pull-left">
-                      Subtotal: <span class="shopping-cart__total"> $130.00</span>
-                    </div>
-                    <div class="pull-right">
-                      <button class="btn btn--wd text-uppercase">Checkout</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- header cart end -->
+{% block headconfig %}
+     <!-- Amazeui -->
+    <link rel="stylesheet" href="{%  static '/vendor/amazeui/css/amazeui.css' %}">
+    <!-- Icon Fonts  -->
+    <link rel="stylesheet" href="{%  static '/font/style.css' %}">
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{%  static '/vendor/waves/waves.css' %}">
+    <link rel="stylesheet" href="{%  static '/vendor/slick/slick.css' %}">
+    <link rel="stylesheet" href="{%  static '/vendor/slick/slick-theme.css' %}">
+    <link rel="stylesheet" href="{%  static '/vendor/bootstrap-select/bootstrap-select.css' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{%  static '/css/style.css' %}">
+    <link rel="stylesheet" href="{%  static '/css/style-colors.css' %}">
+    <link rel="stylesheet" href="{%  static '/css/toolspanel.css' %}">
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="{%  static '/vendor/rs-plugin/css/settings.css' %}" media="screen" />
+    <!-- Head Libs -->
+    <!--[if IE]>
+    <link rel="stylesheet" href="{%  static '/css/ie.css' %}">
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Modernizr -->
+    <script src="{%  static '/vendor/modernizr/modernizr.js' %}"></script>
 {% endblock %}
 
 
 
 {% block pagecontect %}
+    <div id="pageContent" class="page-content">
         <section class="content" id="slider">
 
         <!-- Slider section -->
@@ -1184,5 +1143,41 @@
           </div>
         </section>
         <!-- End Content section -->
+ </div>
+{% endblock %}
 
+{% block bodyjs %}
+    <!-- Vendor -->
+    <!-- jQuery 1.10.1-->
+    <script src="{%  static '/vendor/jquery/jquery.js' %}"></script>
+    <!-- Bootstrap 3-->
+    <script src="{%  static '/vendor/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- Specific Page Vendor -->
+    <script src="{%  static '/vendor/waves/waves.min.js' %}"></script>
+    <script src="{%  static '/vendor/slick/slick.min.js' %}"></script>
+    <script src="{%  static '/vendor/bootstrap-select/bootstrap-select.min.js' %}"></script>
+    <script src="{%  static '/vendor/parallax/jquery.parallax-1.1.3.js' %}"></script>
+    <script src="{%  static '/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+    <script src="{%  static '/vendor/waypoints/sticky.min.js' %}"></script>
+    <script src="{%  static '/vendor/doubletaptogo/doubletaptogo.js' %}"></script>
+    <script src="{%  static '/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{%  static '/vendor/countdown/jquery.plugin.min.js' %}"></script>
+    <script src="{%  static '/vendor/countdown/jquery.countdown.min.js' %}"></script>
+    <!-- jQuery form validation -->
+    <script src="{%  static '/vendor/form/jquery.form.js' %}"></script>
+    <script src="{%  static '/vendor/form/jquery.validate.min.js' %}"></script>
+
+    <script src="{% static '/vendor/countdown/jquery.plugin.min.js' %}"></script>
+    <script src="{% static '/vendor/countdown/jquery.countdown.min.js' %}"></script>
+
+    <!-- Custom -->
+
+    <script src="{%  static '/js/custom.js' %}"></script>
+    <script src="{%  static '/js/toolspanel.js' %}"></script>
+    <script src="{%  static '/js/user.js' %}"></script>
+    <!-- Axios js -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="{%  static '/js/axios.config.js' %}"> </script>
+    <script src="{%  static '/js/initial_base.js' %}"></script>
+    <script src="{%  static '/js/initial_index.js' %}"> </script>
 {% endblock %}

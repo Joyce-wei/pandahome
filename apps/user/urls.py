@@ -11,5 +11,12 @@ urlpatterns = [
                url(r'^logination', views.logination, name='logination'),
                url(r'^registration', views.registration, name='registration'),
                url(r'^logout', views.logout, name='logout'),
-               url(r'^usercenter', views.usercenter, name='usercenter'),
+               url(r'^account', views.account, name='account'),
+               url(r'^about_us', views.about_us, name='about_us'),
+               url(r'^account_address', views.account_address, name='account_address'),
+               url(r'^account_order', views.account_order, name='account_order'),
+               url(r'^contact', views.contact, name='contact'),
+               url(r'^myfoots', views.myfoots, name='myfoots'),
+
+
                ]

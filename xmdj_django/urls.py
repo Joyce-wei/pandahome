@@ -30,5 +30,6 @@ urlpatterns += i18n_patterns(
     url(r'^admin/', admin.site.urls),
     url(r'^home/', include('home.urls')),
     url(r'^user/', include('user.urls')),
+    url(r'^blog/', include('blog.urls')),
 
 )
