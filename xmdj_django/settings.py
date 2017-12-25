@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for xmdj_django project.
 
@@ -156,3 +157,7 @@ LOCALE_PATHS = (
 SITE_NAME = "Face Detect"
 SITE_DESCRIPTION = "Smart detect your face and improve your CRM"
 AUTHOR="Daniel TAN"
+
+#API Params
+BASEURL = "http://127.0.0.1:3000"
+PROMOTIONINFOID = "2"

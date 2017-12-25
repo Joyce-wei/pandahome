@@ -10496,6 +10496,14 @@ body.modal-open {
   font-size: 11px;
   line-height: 22px;
 }
+/*Daniel*/
+.options-swatch--ls li {
+  width: 55px;
+  height: 32px;
+  border-width: 3px;
+  font-size: 11px;
+  line-height: 22px;
+}
 .options-swatch--size li {
   padding: 0 !important;
   line-height: 19px;
