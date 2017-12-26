@@ -159,5 +159,5 @@ SITE_DESCRIPTION = "Smart detect your face and improve your CRM"
 AUTHOR="Daniel TAN"
 
 #API Params
-BASEURL = "http://127.0.0.1:3000"
+BASEURL = "http://54.222.221.172:3000"
 PROMOTIONINFOID = "2"
