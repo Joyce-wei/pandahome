@@ -1,5 +1,4 @@
 var $j = jQuery.noConflict();
-alert('Joyce Test');
 // Uncommenting these lines if prototype.js is used
 
 // if (Prototype.BrowserFeatures.ElementExtensions) {  
